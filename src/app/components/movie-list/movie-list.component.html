@@ -1,0 +1,13 @@
+<div class="movie-list">
+  <app-movie-item
+    *ngFor="let movie of movies"
+    class="movie-comp-item"
+    imageSrc={{movie.image}}
+    imageType={{movie.type}}
+    (handleClick)="deleteMovie(movie.id)"
+    >
+    <h3 class="movieTitle">{{movie.title}}</h3>
+  </app-movie-item>
+
+</div>
+

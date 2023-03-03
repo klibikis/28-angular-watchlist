@@ -1,0 +1,13 @@
+.movie-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px 40px;
+}
+.movie-comp-item{
+  width: 32%;
+}
+.movieTitle{
+  font-size: 16px;
+}

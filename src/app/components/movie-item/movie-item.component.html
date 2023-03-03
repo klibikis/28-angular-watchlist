@@ -1,0 +1,12 @@
+<div class="movie-item">
+  <div class="deleteMovie" (click) = "handleClick.emit()">
+    <p class = 'deleteIcon'>
+      ✘
+    </p>
+  </div>
+  <h3>
+    <ng-content></ng-content>
+  </h3>
+  <img class = 'image' src = {{imageSrc}}>
+  <h5>{{imageType.toUpperCase()}}</h5>
+</div>

@@ -1,0 +1,33 @@
+.form{
+  display: flex;
+  gap: 20px;
+  padding: 5px 30px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}
+.submitButton{
+  padding: 7px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(8, 19, 66);
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s ease-in;
+  &:hover{
+    transform: scale(1.1);
+  }
+}
+.input{
+  height: 100%;
+}
+.formLabels{
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.height100{
+  height: 100%;
+}
