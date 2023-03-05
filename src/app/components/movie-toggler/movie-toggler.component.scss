@@ -1,0 +1,36 @@
+.toggler-wrapper{
+  width: 72px;
+  height: 32px;
+  background-color: rgb(230, 173, 3);
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  cursor: pointer;
+}
+.toggler-all{
+  background-color: rgba(0, 0, 0, 0.743);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}
+.toggler-movies{
+  background-color: rgba(0, 0, 0, 0.743);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 20px;
+}
+.toggler-series{
+  background-color: rgba(0, 0, 0, 0.743);
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+}

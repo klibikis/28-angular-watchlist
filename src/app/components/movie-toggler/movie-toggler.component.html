@@ -1,1 +1,3 @@
-<ng-content></ng-content>
+<div class="toggler-wrapper" (click)="handleToggle.emit()">
+  <div [ngClass]="togglerChangeStyle()"></div>
+</div>

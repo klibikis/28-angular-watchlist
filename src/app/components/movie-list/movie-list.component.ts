@@ -15,11 +15,17 @@ export class MovieListComponent {
   @Input() movies: Movie[];
 
   constructor(private moviesService:MoviesService){
-    const movies = this.moviesService.getMovies()
   }
 
   deleteMovie = (movieId: string) => {
-    this.moviesService.deleteMovie(movieId).subscribe()
-    this.movies = this.movies.filter(movie => movie.id !== movieId);
+    this.moviesService.deleteMovie(movieId).subscribe({
+      next: () => this.movies = this.movies.filter(movie => movie.id !== movieId),
+      error: (e) => console.log(e)
+    })
   }
+
+  // deleteMovie = (movieId: string) => {
+  //   this.moviesService.deleteMovie(movieId).subscribe()
+  //   this.movies = this.movies.filter(movie => movie.id !== movieId);
+  // }
 }

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output} from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { MoviesService  } from '../../services/movies.service'
 import { Movie } from 'src/app/types/movie';
+import * as uuid from 'uuid';
 
 @Component({
   selector: 'app-movie-add-form',
@@ -12,19 +12,23 @@ export class MovieAddFormComponent{
 
   reactiveForm: FormGroup;
 
-  constructor(private moviesService:MoviesService){
-    const movies = this.moviesService.getMovies()
-  }
-
   @Output() handleSubmit = new EventEmitter<Movie>()
 
 
   ngOnInit() {
     this.reactiveForm = new FormGroup({
-      title: new FormControl(''),
-      image: new FormControl(''),
+      title: new FormControl(null),
+      image: new FormControl(null),
       type: new FormControl('movie')
     });
   }
-  
+  handleFormSubmit() {
+    this.handleSubmit.emit(this.reactiveForm.value)
+    this.reactiveForm.setValue({
+      title: null,
+      image: null,
+      type: 'movie'
+    })
+  }
+
 }

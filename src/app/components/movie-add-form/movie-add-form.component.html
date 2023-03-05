@@ -1,15 +1,15 @@
-<form class="form" [formGroup]="reactiveForm" (ngSubmit)="handleSubmit.emit(this.reactiveForm.value)">
-  <label for="title" class="input formLabels height100">
+<form class="form" [formGroup]="reactiveForm" (ngSubmit)="handleFormSubmit()">
+  <label for="title" class="formLabels height100">
     Title:
   </label>
-  <input type="text" class="height100" placeholder="ex: Batman returns" id="title" formControlName="title" required="">
-  <label  for="image" class="input formLabels height100">
+  <input type="text" class="height100 input" placeholder="ex: Batman returns" id="title" formControlName="title" required>
+  <label  for="image" class="formLabels height100">
     Image:
   </label>
-  <input type="text" class="height100" placeholder="ex: https://example.com" id="image" formControlName="image" required="">
-  <select id="movieOrSeries" formControlName="type" class="height100 centered">
+  <input type="text" class="height100 input" placeholder="ex: https://example.com" id="image" formControlName="image" required>
+  <select id="movieOrSeries" formControlName="type" class="height100 centered input">
     <option value="movie">Movie</option>
     <option value="series">Series</option>
   </select>
-  <button class="submitButton height100">Post</button>
+  <button class="submitButton height100" type="submit" [disabled]="!reactiveForm.valid">Post</button>
 </form>

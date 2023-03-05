@@ -1,17 +1,11 @@
 <div class="app-wrapper">
   <div class="movies-app-wrapper">
+    <app-movie-toggler class="toggler" (handleToggle)="handleToggle()" [toggler]="toggler"></app-movie-toggler>
     <div class="header-wrapper">
       <h1 class="mainTitle">Your movies/series watchlist</h1>
     </div>
-    <app-movie-toggler class="toggler">
-      Toggler
-    </app-movie-toggler>
-
-    <app-movie-add-form (handleSubmit)="handleFormSubmit($event)">
-
-    </app-movie-add-form>
-    <app-movie-list class="width100" [movies]="movies">
-    </app-movie-list>
+    <app-movie-add-form (handleSubmit)="handleFormSubmit($event)"></app-movie-add-form>
+    <app-movie-list class="width100" [movies]="movies"></app-movie-list>
   </div>
 </div>
 

@@ -4,3 +4,9 @@ export type Movie = {
   id: string,
   type: string
 }
+export type DatabaseMovie = {
+  Id: number,
+  Title: string,
+  Year: string,
+  Image: string
+}

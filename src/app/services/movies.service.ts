@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Movie } from '../types/movie';
+import { Movie, DatabaseMovie } from '../types/movie';
 import { Subject } from 'rxjs';
-import * as uuid from 'uuid';
 
 
 @Injectable({
@@ -24,8 +23,7 @@ getMovies() {
 deleteMovie(movieId: string){
   return this.http.delete<Movie>(`http://localhost:3006/movies/delete/${movieId}`)
 }
-postMovie({title, image, type}: Movie){
-  const id = uuid.v4();
+postMovie({title, image, type, id}: Movie){
   return this.http.post<Movie>(`http://localhost:3006/movies/new`, {
     title,
     image,
@@ -33,6 +31,8 @@ postMovie({title, image, type}: Movie){
     id
   })
 }
-
+getMoviesFromDatabase() {
+  return this.http.get<DatabaseMovie[]>('https://imdb-api.com/en/API/MostPopularMovies/k_m4mk9pjs')
+}
 }
 
